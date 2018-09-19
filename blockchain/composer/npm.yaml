@@ -1,0 +1,11 @@
+version: '2'
+services:
+  npmregistry:
+    container_name: npmregistry
+    image: verdaccio/verdaccio
+    extra_hosts:
+      - "orderer.example.com:<PEER-1-IP>"
+    ports:
+      - 4873:4873
+    volumes:
+        - /home/repo:/verdaccio/storage/
